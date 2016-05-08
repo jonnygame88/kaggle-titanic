@@ -48,5 +48,5 @@ clean <- function(df) {
 create_submission <- function(preds, file_name) {
   test_raw <- read.csv("data/test.csv")
   data.frame(PassengerId = test_raw$PassengerId, Survived = preds) %>%
-    write.csv(paste0("data/", file_name, ".csv"))
+    write.csv(paste0("data/", file_name, ".csv", row.names = FALSE))
 }
